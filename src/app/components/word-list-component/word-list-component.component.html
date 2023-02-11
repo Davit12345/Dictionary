@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+
+  <ion-toolbar class="">
+
+      <ion-icon (click)="close()" slot="start" class="font40" name="close-outline"></ion-icon>
+
+    <ion-title class="ion-text-center --ion-title-color">Your words</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-margin-bottom" >
+
+  <div *ngFor="let item of direction_list;let i = index">
+
+    <ion-item-sliding >
+
+      <ion-item>
+
+        <div class="item">
+          <div>  {{item.hy}}</div>
+          <div><span> {{item.en}} </span></div>
+        </div>
+      </ion-item>
+
+    </ion-item-sliding>
+  </div>
+  <div style="height: 80px"></div>
+</ion-content>

@@ -1,0 +1,22 @@
+.slider {
+  height: 200px;
+  padding: 20px 10px;
+  border-radius: 0 0 25px 25px;
+  background: linear-gradient(#dc9b9b, #5a5ad5);
+
+  ion-slides {
+    ion-slide {
+
+
+      ion-card {
+        width: 100%;
+        border-radius: 20px;
+
+        img {
+          height: 150px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

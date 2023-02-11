@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar class="flex">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center --ion-title-color">
+            Deploy Memory 1
+        </ion-title>
+        <ion-buttons class="font30" slot="end" (click)="startGame()">
+            <ion-icon name="refresh-outline"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="game-div" *ngIf="step!='start'">
+
+        <div *ngIf="step=='game'">
+            <div class="current-word" (click)="openEn()">{{curent_word['hy']}}<span
+                    *ngIf="isEn"> - {{curent_word['en']}}</span></div>
+
+            <div class="several-circle ion-margin-top flex mg-t-50 ion-justify-content-around">
+                <ion-button (click)="IKnow()" class="circle" color="success">Yes</ion-button>
+                <ion-button (click)="INotKnow()" class="circle" color="danger">No</ion-button>
+
+            </div>
+        </div>
+
+        <div *ngIf="step=='new-game'" class="several-circle ion-margin-top flex mg-t-50 ion-justify-content-around">
+            <ion-button style="height: 80px" (click)="startGame()" color="success">Start again</ion-button>
+        </div>
+
+        <ion-title class="ion-text-center mg-t-50 ">all word {{curent_word_id}}</ion-title>
+        <div class="last-list ">
+
+
+            <div class="true-list flex-col ion-text-center">
+                  <span *ngIf="step=='new-game'" (click)="openListComponent(true_list)">
+                  <ion-icon name="list-circle-outline"></ion-icon>    open list {{true_list.length}} word
+                  </span>
+                <span *ngFor="let t_item of true_list;index as i">
+                  {{i + 1}}   {{t_item['en']}}
+                </span>
+            </div>
+
+            <div class="false-list flex-col ion-text-center">
+                  <span *ngIf="step=='new-game'" (click)="openListComponent(false_list)">
+                  <ion-icon name="list-circle-outline"></ion-icon>    open list {{false_list.length}} word
+                  </span>
+                <span *ngFor="let f_item of false_list;index as i">
+                   {{i + 1}} {{f_item['en']}}
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="start-div" *ngIf="step=='start'">
+        <ion-button class="start-button" (click)="startGame()" color="success">Start</ion-button>
+    </div>
+</ion-content>

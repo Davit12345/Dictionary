@@ -1,0 +1,44 @@
+.start-div {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  .start-button {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+.game-div{
+  height: auto;
+  width: 100%;
+  .current-word{
+    font-size: 24px;
+    color: var(--ion-color-danger);
+    text-align: center;
+    margin-top: 40px;
+  }
+  .several-circle{
+    text-align: center;
+    .circle{
+      width: 80px;
+      height: 80px;
+    }
+  }
+  .last-list{
+    background: antiquewhite;
+    display: flex;
+    min-height: 300px;
+    div{
+      padding: 10px;
+      width: 50%;
+    }
+    .true-list{
+      color: #2dd36f;
+  }
+    .false-list{
+      color: var(--ion-color-danger-tint);
+    }
+  }
+}

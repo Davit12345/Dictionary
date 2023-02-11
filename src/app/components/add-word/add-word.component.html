@@ -1,0 +1,24 @@
+<ion-content>
+    <ion-title class="--ion-title-color ion-text-center ion-margin-top ">Add new ward in your list</ion-title>
+    <form class="mg-t-50" [formGroup]="addForm">
+        <div class="content-input">
+            <div class="flex">
+                <ion-input clearInput type="text" pattern="[a-zA-Z, ]*" formControlName="en" class="input"
+                           placeholder="Add English word"></ion-input>
+                <ion-icon class="font40" name="mic-outline" (click)="startListening('en-US')"></ion-icon>
+            </div>
+            <div class="flex">
+            <ion-input clearInput type="text" pattern="[ա-ֆԱ-Ֆ,և ]*" formControlName="hy" class="input"
+                       placeholder="Add Armenian word"></ion-input>
+            <ion-icon class="font40" name="mic-outline" (click)="startListening('hy')"></ion-icon>
+            </div>
+        </div>
+
+        <ion-fab (click)="close()" vertical="bottom" horizontal="start" slot="fixed">
+            <ion-fab-button color="success">Close</ion-fab-button>
+        </ion-fab>
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+            <ion-fab-button (click)="add()" [disabled]="!addForm.valid" color="danger">Add</ion-fab-button>
+        </ion-fab>
+    </form>
+</ion-content>
