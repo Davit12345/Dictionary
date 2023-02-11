@@ -8,10 +8,7 @@ import {HTTP} from '@ionic-native/http/ngx';
 })
 export class ApiService {
 
-  // private serverUrl = "http://fastshift.im/api/";
-  // static serverUrl = "http://10.254.3.40:89/api/"
   // static serverUrl = "http://192.168.0.107:85/api/";
-  // static serverUrl = "http://haypost.im/api/";
   static serverUrl = "http://localhost:81/api/";
 
 
